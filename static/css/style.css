@@ -1,64 +1,85 @@
+/* Styling for the body */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Ensure minimum height covers viewport */
+    margin: 0; /* Remove default browser margins */
+    background-color: #f0f0f0; /* Light grey background */
+    font-family: Arial, sans-serif; /* Default font for consistency */
 }
 
+/* Styling for the container */
 .container {
-    height: 50vh;
-    width: 25%;
+    max-width: 400px; /* Maximum width for larger screens */
+    min-width: 300px; /* Minimum width for smaller screens */
+    width: 90%; /* Responsive width for different screen sizes */
+    padding: 2rem; /* Padding inside the container */
+    background-color: #fff; /* White background for contrast */
+    border: 1px solid #47616c; /* Border styling */
+    border-radius: 12px; /* Rounded corners */
     display: flex;
-    padding: 2rem 8px;
+    flex-direction: column; /* Stack items vertically */
     justify-content: space-between;
-    flex-direction: column;
     align-items: center;
-    border: 1px solid #47616c;
-    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Styling for the header */
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center; /* Center-align the text */
 }
 
+/* Styling for the image container */
 .img-box {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 80px; /* Slightly larger image container */
+    height: 80px;
+    border-radius: 50%; /* Make the container circular */
+    overflow: hidden; /* Crop any overflowing content */
+    margin-top: 10px; /* Space between header text and image */
 }
 
+/* Styling for the image */
 .img {
-    width: 100%;
+    width: 100%; /* Fill the container's width */
+    height: 100%; /* Fill the container's height */
+    object-fit: cover; /* Scale the image proportionally */
 }
 
+/* Styling for the Google button */
 .google-btn {
     display: flex;
     align-items: center;
-    background-color: #47616c;
-    color: white;
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    padding-inline: 8px;
-    text-decoration: none;
+    justify-content: center; /* Center the button text */
+    background-color: #47616c; /* Button background color */
+    color: white; /* Text color */
+    width: 220px; /* Wider button for better accessibility */
+    height: 50px; /* Height of the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
+/* Hover effect for the Google button */
+.google-btn:hover {
+    background-color: #3b4c58; /* Slightly darker shade on hover */
+}
+
+/* Styling for the Google icon */
 .google-icon {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg") transparent 5px 50% no-repeat;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg") no-repeat;
+    background-size: contain; /* Ensure the icon fits properly */
     display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    height: 50px;
+    width: 24px; /* Icon width */
+    height: 24px; /* Icon height */
+    margin-right: 10px; /* Space between icon and text */
 }
 
+/* Styling for the button text */
 .btn-text {
-    margin-left: 10px;
+    font-size: 16px; /* Font size for better readability */
 }
