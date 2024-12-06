@@ -10,7 +10,7 @@ cryptography==42.0.1
 dynaconf==3.2.4
 exceptiongroup==1.2.0
 fastapi==0.95.2
-# fastapi-authlib==0.0.4  # Removed if not needed
+fastapi-authlib==0.0.4
 fastapi-sa==0.1.0
 greenlet==3.0.3
 h11==0.14.0
