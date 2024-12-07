@@ -18,7 +18,7 @@ app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
 
 # Static files
 # Mount the static files directory
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(os.getcwd(), "static")), name="static")
 
 # Jinja2 templates
 jinja2_templates = Jinja2Templates(directory="templates")
