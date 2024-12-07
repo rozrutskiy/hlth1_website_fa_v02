@@ -53,12 +53,16 @@ from .config import CLIENT_ID, CLIENT_SECRET
 oauth = OAuth()
 oauth.register(
     name="google",
+    server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
     client_id=CLIENT_ID,
     client_secret=CLIENT_SECRET,
-    access_token_url="https://accounts.google.com/o/oauth2/token",
-    authorize_url="https://accounts.google.com/o/oauth2/auth",
-    api_base_url="https://www.googleapis.com/oauth2/v1/",
-    client_kwargs={"scope": "openid email profile"},
+    client_kwargs={
+        "scope": "openid email profile",
+        "redirect_uri": "http://localhost:8000/auth"
+        }
+    # access_token_url="https://accounts.google.com/o/oauth2/token",
+    # authorize_url="https://accounts.google.com/o/oauth2/auth",
+    # api_base_url="https://www.googleapis.com/oauth2/v1/",
 )
 
 # Example: Route for OAuth login
