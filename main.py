@@ -47,19 +47,19 @@ if __name__ == "__main__":
 # but are preserved here for your reference and potential reuse.
 
 # Example: OAuth configuration
-# from authlib.integrations.starlette_client import OAuth, OAuthError
-# from .config import CLIENT_ID, CLIENT_SECRET
-# 
-# oauth = OAuth()
-# oauth.register(
-#     name="google",
-#     client_id=CLIENT_ID,
-#     client_secret=CLIENT_SECRET,
-#     access_token_url="https://accounts.google.com/o/oauth2/token",
-#     authorize_url="https://accounts.google.com/o/oauth2/auth",
-#     api_base_url="https://www.googleapis.com/oauth2/v1/",
-#     client_kwargs={"scope": "openid email profile"},
-# )
+from authlib.integrations.starlette_client import OAuth, OAuthError
+from .config import CLIENT_ID, CLIENT_SECRET
+
+oauth = OAuth()
+oauth.register(
+    name="google",
+    client_id=CLIENT_ID,
+    client_secret=CLIENT_SECRET,
+    access_token_url="https://accounts.google.com/o/oauth2/token",
+    authorize_url="https://accounts.google.com/o/oauth2/auth",
+    api_base_url="https://www.googleapis.com/oauth2/v1/",
+    client_kwargs={"scope": "openid email profile"},
+)
 
 # Example: Route for OAuth login
 # @app.get("/login")
