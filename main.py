@@ -10,9 +10,8 @@ import uvicorn
 
 # Create the FastAPI app instance
 app = FastAPI()
-app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
-static_dir = os.environ.get("STATIC_DIR", "static")
-app.mount("/static", StaticFiles(directory=static_dir), name="static")
+app.add_middleware(SessionMiddleware, secret_key="add any string...")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 oauth = OAuth()
 oauth.register(
