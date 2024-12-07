@@ -1,0 +1,95 @@
+[33mcommit c792f0733e0b4e305583eb5dd9f952b90c860bb8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Sat Dec 7 10:51:06 2024 +1100
+
+    refactor layout and styles for improved responsiveness; update HTML structure for better semantics
+
+[33mcommit 552fd93b1817c78b3354be78b759c107216dbf8a[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Sat Dec 7 10:42:57 2024 +1100
+
+    refactor CSS styles for improved layout and responsiveness; update HTML structure for better semantics
+
+[33mcommit 3196ab118a16d0d0314b8eac838a8699452ae131[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Sat Dec 7 10:37:03 2024 +1100
+
+    refactor styles and improve HTML structure for home page
+
+[33mcommit 5eb1ffb5f10a3179790d567d32fca71c1c59fb93[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Sat Dec 7 08:55:09 2024 +1100
+
+    update Azure deployment workflow to use Python 3.11 and restore fastapi-authlib dependency in requirements.txt
+
+[33mcommit a30e9534f46a9dcba6fad1eecf2d0ebd215ea000[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 22:08:38 2024 +1100
+
+    remove unused fastapi-authlib dependency from requirements.txt
+
+[33mcommit fcd03005b6dc0f601c5104f9630e6396d2445ae5[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 22:03:08 2024 +1100
+
+    update Azure deployment workflow to use Python 3.12
+
+[33mcommit c13d3767b8882489bf2e2383ca0e819875a86dbe[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 21:53:37 2024 +1100
+
+    update Azure deployment workflow to use Python 3.9
+
+[33mcommit d39bf85090ab9f011c87b540c5396cd855102d30[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 21:36:46 2024 +1100
+
+    add slot name to Azure deployment workflow
+
+[33mcommit 1ece5b026ee1dee3a887ae44ad8dbc86fc7b3d10[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 21:34:38 2024 +1100
+
+    refactor main.py to improve code formatting and maintainability
+
+[33mcommit 1149a4a1a37f38e25151859487ceffa38201ad5f[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 21:21:56 2024 +1100
+
+    changed python version to 3.10
+
+[33mcommit afe19f2152db9c32fb175ea0600792727ab5b928[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 21:19:04 2024 +1100
+
+    update Azure deployment workflow to use Python 3.9 and change app name
+
+[33mcommit a72ce86b6e56509f1f1fe4a46349283f75053d2f[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 18:45:11 2024 +1100
+
+    add GitHub Actions workflow for Azure deployment
+
+[33mcommit c347f5723ea31ab85ce9852a592b8ef125920f56[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 18:34:42 2024 +1100
+
+    empty commit
+
+[33mcommit a5ed659758d5459c42f31e2fd009e2170685fccc[m
+Author: andrii <rozrutskiy@gmail.com>
+Date:   Fri Dec 6 18:28:44 2024 +1100
+
+    update main.py to use dynamic port from environment variable and allow external access
+
+[33mcommit a388cbca13a12666f38ad941a501535427b74927[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: amoprocedures <amosmukelo@gmail.com>
+Date:   Mon Jan 29 15:54:51 2024 +0300
+
+    added clearing session
+
+[33mcommit 9fc43d4eec12a9fdb51fcd9017d58ff66802b24e[m
+Author: amoprocedures <amosmukelo@gmail.com>
+Date:   Thu Oct 26 11:26:19 2023 +0300
+
+    initial
