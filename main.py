@@ -5,14 +5,20 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import HTMLResponse
 import uvicorn
+from fastapi.responses import FileResponse
 
 # Create the FastAPI app instance
 app = FastAPI()
+
+@app.get("/static/{file_path:path}")
+async def serve_static_file(file_path: str):
+    return FileResponse(f"static/{file_path}")
 
 # Middleware
 app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
 
 # Static files
+# Mount the static files directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Jinja2 templates
