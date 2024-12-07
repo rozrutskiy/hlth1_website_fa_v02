@@ -16,7 +16,9 @@ app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
 
 # Static files
-app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+# Use environment variable to configure the static directory
+static_dir = os.environ.get("STATIC_DIR", "static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # Jinja2 templates
 templates = Jinja2Templates(directory="templates")
