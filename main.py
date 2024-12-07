@@ -13,6 +13,7 @@ app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
 static_dir = os.environ.get("STATIC_DIR", "static")
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
+
 oauth = OAuth()
 oauth.register(
     name='google',
