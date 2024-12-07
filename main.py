@@ -4,9 +4,10 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import HTMLResponse
+from config import STATIC_DIR
 import uvicorn
 
-from config import CLIENT_ID, CLIENT_SECRET  # Changed to absolute import
+from config import CLIENT_ID, CLIENT_SECRET
 
 # Create the FastAPI app instance
 app = FastAPI()
@@ -15,8 +16,7 @@ app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
 
 # Static files
-static_dir = os.environ.get("STATIC_DIR", "static")
-app.mount("/static", StaticFiles(directory=static_dir), name="static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # Jinja2 templates
 templates = Jinja2Templates(directory="templates")
@@ -29,7 +29,6 @@ async def read_root(request: Request):
 # OAuth configuration
 from authlib.integrations.starlette_client import OAuth, OAuthError
 from config import CLIENT_ID, CLIENT_SECRET  # Changed to absolute import
-
 oauth = OAuth()
 oauth.register(
     name="google",
