@@ -23,6 +23,7 @@ oauth.register(
         'scope': 'email openid profile',
         'redirect_url': 'http://localhost:8000/auth'
         'redirect_uri': 'http://localhost:8000/auth'
+        }
 )
 
 templates = Jinja2Templates(directory="templates")
