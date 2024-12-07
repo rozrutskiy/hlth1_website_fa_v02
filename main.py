@@ -25,10 +25,7 @@ templates = Jinja2Templates(directory="templates")
 # Define the root route
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse(
-        name="home.html", 
-    context={"request": request}
-)
+    return templates.TemplateResponse("home.html", {"request": request})
 
 # OAuth configuration
 from authlib.integrations.starlette_client import OAuth, OAuthError
