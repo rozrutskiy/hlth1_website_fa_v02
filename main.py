@@ -1,18 +1,17 @@
 import os
+
 from fastapi import FastAPI, Request
-from fastapi.templating import Jinja2Templates
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import HTMLResponse
 import uvicorn
-from fastapi.responses import FileResponse
 
 # Create the FastAPI app instance
 app = FastAPI()
 
-@app.get("/static/{file_path:path}")
-async def serve_static_file(file_path: str):
-    return FileResponse(f"static/{file_path}")
+# Removed custom static file serving route
 
 # Middleware
 app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
@@ -22,19 +21,28 @@ app.add_middleware(SessionMiddleware, secret_key="add_any_string_here")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Jinja2 templates
-templates = Jinja2Templates(directory="templates")
+jinja2_templates = Jinja2Templates(directory="templates")
 
 # Define the root route
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
+    return jinja2_templates.TemplateResponse("home.html", {"request": request})
+async def read_root(request: Request):
+    """
+    Handle the root route and render the home page.
+
+    Args:
+        request (Request): The request object.
+
+    Returns:
+        TemplateResponse: The rendered home page.
+    """
     return templates.TemplateResponse("home.html", {"request": request})
 
+# Get the port from the environment variable or use 8000 as the default port
 if __name__ == "__main__":
-    # Get the port from the environment variable or use 8000 as default
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
-
-# --- PRESERVED CODE (PREVIOUSLY REMOVED) ---
 # The following code snippets were removed during the consolidation process,
 # but are preserved here for your reference and potential reuse.
 
