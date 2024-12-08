@@ -4,7 +4,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import HTMLResponse, RedirectResponse
 from authlib.integrations.starlette_client import OAuth, OAuthError
-from config import STATIC_DIR, CLIENT_ID, CLIENT_SECRET
+from config import REDIRECT_URI, STATIC_DIR, CLIENT_ID, CLIENT_SECRET
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 
@@ -21,7 +21,7 @@ oauth.register(
     client_secret=CLIENT_SECRET,
     client_kwargs={
         'scope': 'email openid profile',
-                'redirect_uri': "http://localhost:8000/auth"
+                'redirect_uri': REDIRECT_URI
             }
         )
 
