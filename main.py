@@ -21,13 +21,16 @@ oauth.register(
     client_secret=CLIENT_SECRET,
     client_kwargs={
         'scope': 'email openid profile',
-        'redirect_uri': 'http://localhost:8000/auth'
-        }
-)
+                'redirect_uri': "http://localhost:8000/auth"
+            }
+        )
 
 templates = Jinja2Templates(directory="templates")
 
-
+def index(request: Request):
+    """
+    Handle the root endpoint, redirecting authenticated users to the welcome page.
+    """
 @app.get("/")
 def index(request: Request):
     user = request.session.get('user')
